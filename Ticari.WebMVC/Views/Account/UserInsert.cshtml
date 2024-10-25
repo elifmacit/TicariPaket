@@ -1,0 +1,130 @@
+﻿@using Ticari.WebMVC.Models.VMs.Account
+@model UserInsertVM
+
+<div class="container mt-5">
+
+<div class="card"> 
+
+    <div class="card-header">
+        <h3>Kayit Ekrani</h3>
+    </div>
+
+
+    <div class="card-body">
+        <form asp-action="UserInsert" method="post"> 
+
+            <div class="row">   @* Ekrana bir row atayoruz ve atilan row'u 3 parçaya boluyoruz. 1. parca 2 column dan olusacak label olusacak. Digeri input icin 6 parca ve en son validation mesajlari icin de 4 parça ayiriyoruz*@
+                <div class="col-2">
+                    <label asp-for=Ad></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for=Ad />
+                </div>
+                    <div class="col-4">
+                        <span asp-validation-for="Ad" class="text-danger"></span>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-2">
+                        <label asp-for=Soyad></label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for=Soyad />
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="Soyad" class="text-danger"></span>
+                    </div>
+            </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for=TcNo></label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for=TcNo />
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="TcNo" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for=Email></label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for=Email />
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for=Gsm></label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for=Gsm />
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="Gsm" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for=Password></label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for=Password />
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for=RePassword></label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for=RePassword />
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="RePassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label asp-for=Cinsiyet></label>
+                    </div>
+                    <div class="col-2">
+                        @* <input asp-for=Cinsiyet type="radio" value="true" /><label></label>
+                        <input asp-for=Cinsiyet type="radio" value="false" /> *@
+
+                        <select asp-for="Cinsiyet" class="form-select">
+                            <option value="true">Erkek</option>
+                            <option value="false">Kadin</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <span asp-validation-for="Cinsiyet" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="row mt-3">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+
+                    </div>
+                </div>
+        </form>
+
+    </div>
+
+</div>
+</div>
+@* Burasi Validation kurallarini işleten kutuphanlerdir *@
+@section Scripts
+{
+   
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,3 @@
+﻿1_Genelde projenin root kısmında Component İsminde bir klasör olusturulur.
+2_ Bu klasörde sonu ViewComponent ile bitecek bir class olusturulur.
+3- Class ViewComponent'ten inherit...

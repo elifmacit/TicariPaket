@@ -1,0 +1,42 @@
+﻿
+@model List<MyUser>
+
+<a asp-action="UserInsert" asp-controller="Account" class="btn btn-primary">Yeni Kayit</a>
+
+<table class="table table-active">
+    <tr>
+        <td>Ad</td>
+        <td>Soyad</td>
+        <td>Email</td>
+        <td>Gsm</td>
+        <td>TcNo</td>
+        <td>Islem</td>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+
+            <td>@user.Ad</td>
+            <td>@user.Soyad</td>
+            <td>@user.Email</td>
+            <td>@user.Gsm</td>
+            <td>@user.TcNo.Substring(7)</td>
+            <td>
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary dropdown-toggle"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-gear-wide-connected"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-action="EditUser" asp-controller="Account" asp-route-id="@user.Id"><i class="bi bi-pencil-square"></i></a></li>
+                        <li><a class="dropdown-item" asp-action="DeleteUser" asp-controller="Account" asp-route-id="@user.Id"><i class="bi bi-archive"></i></a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+
+                </div>
+            </td>
+        </tr>
+    }
+</table>

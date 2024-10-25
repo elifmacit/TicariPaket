@@ -1,0 +1,15 @@
+﻿@model List<Menu>
+
+
+@foreach(var menu in Model)
+{
+    <li class="nav-item">
+        <a asp-action="@menu.ActionName"
+           asp-controller="@menu.ControllerName"
+           asp-area="@menu.AreaName"
+           class="@menu.ClassName">
+            <i class="@menu.IConName"></i>
+            <p>@menu.MenuName</p>
+        </a>
+    </li>
+}
